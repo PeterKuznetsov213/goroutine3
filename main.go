@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 func main() {
@@ -34,5 +35,6 @@ func goroutineFilter(upstream, downstream chan string) {
 func goroutinePrint(upstream chan string) {
 	for value := range upstream {
 		fmt.Println(value)
+		time.Sleep(1 * time.Second)
 	}
 }
